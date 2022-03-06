@@ -46,3 +46,5 @@ Please use asciinema (https://asciinema.org) to record a demo and submit the url
 
 And please elaborate your understanding in layered systems via this homework in your README.md.
 
+
+作业中，数据为接口PosDB,对数据的处理是接口PosService,PosCommand负责与用户交互提供视图的同时调用服务。

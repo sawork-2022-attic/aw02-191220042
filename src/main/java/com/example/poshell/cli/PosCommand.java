@@ -38,4 +38,17 @@ public class PosCommand {
         }
         return "ERROR";
     }
+
+   @ShellMethod(value = "Print Items in the Cart", key = "v")
+    public String showCart(){
+        return posService.getCart().toString();
+   }
+
+    @ShellMethod(value = "Empty the Cart", key = "e")
+   public String empty(){
+        posService.getCart().clear();
+        return posService.getCart().toString();
+    }
+
+
 }

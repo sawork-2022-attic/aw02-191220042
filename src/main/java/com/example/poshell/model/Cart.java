@@ -10,7 +10,20 @@ public class Cart {
 
     private List<Item> items = new ArrayList<>();
 
+    public boolean modify(Item item1,Item item2){
+        item1.setAmount(item1.getAmount()+ item2.getAmount());
+        return true;
+    }
+
+    public void clear(){
+        items.clear();
+    }
+
     public boolean addItem(Item item) {
+        Item i = items.stream().filter(t -> t.getProduct().getId().equals(item.getProduct().getId())).findAny().orElse(null);
+        if(i!=null){
+            return modify(i,item);
+        }
         return items.add(item);
     }
 
